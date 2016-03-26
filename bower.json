@@ -1,0 +1,25 @@
+{
+  "name": "todoapp",
+  "description": "todo application",
+  "main": "app.js",
+  "authors": [
+    "Akshata Kulkarni <akshata.L54@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.2",
+    "bootstrap": "~3.3.6",
+    "angular-route": "~1.5.2",
+    "angular-ui-router": "ui-route#~0.2.18"
+  }
+}

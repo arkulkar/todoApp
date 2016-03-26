@@ -1,0 +1,49 @@
+<div data-ng-controller="todoTaskCntrl" style="margin-top: 5%">
+    <h1 style="color: #337ab7; text-align: center;">your todo tasks</h1>
+    <br>
+    <div class="col-xs-offset-3 col-xs-6">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="task">Title</label>
+                <input ng-model="newTask.title" type="text" class="form-control" id="task" placeholder="Name of the task">
+            </div>
+            <div class="form-group">
+                <label for="duedate">&nbsp;&nbsp;Due Date</label>
+                <input ng-model="newTask.dueTime" type = "text"class="form-control" id="duedate" placeholder="MM dd, yyyy">
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click="addTodoTask()">Add</button>
+        </form>
+    </div>
+    <div class="col-xs-offset-3 col-xs-6">
+        <div class="text-danger" ng-if="error">{{error}}</div>
+        <div class="text-success'" ng-if="success">{{success}}</div>
+        <button class="btn btn-link pull-right" ng-click="showAll()">show all</button>
+        <button class="btn btn-link pull-right" ng-click="showCompleted()">show completed</button>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Due Date</th>
+                <th>isCompleted</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="list in todoList" >
+                <td  ng-if="!list.isComplete">{{list.title}}</td>
+                <td style="color: green" ng-if="list.isComplete"><strike>{{list.title}}</strike></td>
+
+                <td  ng-if="!list.isComplete">{{list.dueTime | date:dd-MM-yyyy}}</td>
+                <td style="color: green" ng-if="list.isComplete"><strike>{{list.dueTime | date:dd-MM-yyyy}}</strike></td>
+
+                <td  ng-if="!list.isComplete">{{list.isComplete}}</td>
+                <td style="color: green" ng-if="list.isComplete"> <strike>{{list.isComplete}}</strike></td>
+
+                <td><button class="btn btn-danger" ng-click="deleteTask(list)">Delete</button> </td>
+                <td><button class="btn btn-success" ng-click="markCompleted(list)">Complete</button> </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
