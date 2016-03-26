@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4><i class="fa fa-user"></i> Please provide user name</h4>
+</div>
+
+<form class="form-inline" name="switchFrom" role="form">
+    <div class="modal-body" >
+
+        <div class="form-group form-horizontal">
+            <label for="user-text">Name :</label>
+            <input id="user-text" class="form-control" name="user-text" type="text" ng-model="user.name" required focusme autofocus>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="switch-button" type="submit" ng-click="submit()" class="btn btn-primary">
+            <i class="fa fa-plug"></i> CheckIn
+        </button>
+    </div>
+</form>

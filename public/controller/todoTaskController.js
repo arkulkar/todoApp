@@ -2,9 +2,9 @@
  * Created by arkulkar on 3/24/2016.
  */
 angular.module('todoapp').controller('todoTaskCntrl',todoList);
-function todoList($scope, $http){
+function todoList($scope, $http, User){
     $scope.welcome = 'welcome';
-    $scope.userName = 'pritam';
+    $scope.userName = User.user.name;
     getTodoList();
     $scope.newTask = {};
     $scope.addTodoTask = function(){
